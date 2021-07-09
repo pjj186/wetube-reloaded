@@ -7,7 +7,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require("path");
 
 module.exports = {
-    entry: "./src/client/js/main.js",
+    entry: { 
+        main: "./src/client/js/main.js",
+        videoPlayer: "./src/client/js/videoPlayer.js",
+    },
     mode: 'development', // development, production 두 가지 모드가있는데 기본값은 production이다. 개발중일땐 development 모드로 설정, 완성하면 production
     watch: true,
     plugins: [new MiniCssExtractPlugin({
@@ -15,7 +18,7 @@ module.exports = {
         })
     ],
     output: {
-        filename:"js/main.js", // 결과물로 저장될 파일 이름
+        filename:"js/[name].js", // 결과물로 저장될 파일 이름
         path: path.resolve(__dirname, "assets"), // 결과물을 저장할 경로 * 절대경로를 요구
         clean: true, // output folder의 build를 시작하기 전에 clean 해주는 것
     },
