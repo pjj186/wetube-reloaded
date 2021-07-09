@@ -14,7 +14,7 @@
 - [x] OAuth : 깃 허브 로그인 기능!
 - [x] Multer : 파일을 업로드할때 사용하는 편리한 미들웨어
 - [x] WebPack : 브라우저가 이해하지 못하는 세련되게 짜여진 코드 / CSS를 브라우저가 이해 할 수 있는 호환성 있는 코드 / CSS로 전환하기 위해 사용
-- Loaders
+- Loaders <br>
 > 1. babel-loader : ES6로 작성한 자바스크립트 코드를 브라우저가 이해할 수 있게 변환시켜줌
 > 2. scss-loader : scss 파일을 가져다가 css 파일로 전환시켜줌
 > 3. css-loader : @import랑 url()을 풀어서 해석해주는 역할
@@ -38,17 +38,17 @@
 ***
 
 ## Routers
->/ -> Home
->/join -> Join
->/login -> Login
->/search -> Search
+>/ -> Home <br>
+>/join -> Join <br>
+>/login -> Login <br>
+>/search -> Search <br><br>
 
->/users/:id -> See User
->/users/logout -> Log Out
->/users/edit -> Edit MY Profile
->/users/delete -> Delete MY Profile
+>/users/:id -> See User <br>
+>/users/logout -> Log Out <br>
+>/users/edit -> Edit MY Profile <br>
+>/users/delete -> Delete MY Profile <br><br>
 
->/videos/:id -> See Video
->/videos/:id/edit -> Edit Video
->/videos/:id/delete -> Delete Video
->/videos/upload -> Upload Video
+>/videos/:id -> See Video <br>
+>/videos/:id/edit -> Edit Video <br>
+>/videos/:id/delete -> Delete Video <br>
+>/videos/upload -> Upload Video <br><br>
