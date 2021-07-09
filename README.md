@@ -24,40 +24,31 @@
 ***
 
 ## Functions
-[x]Home
-[x]Join
-[x]Login
-[x]Search
-[x]See Video
-[x]Edit Video
-[x]Delete Video
-[x]Upload Video
-[x]Log out
-[x]See User
-[x]Edit My Profile
+- [x]Home
+- [x]Join
+- [x]Login
+- [x]Search
+- [x]See Video
+- [x]Edit Video
+- [x]Delete Video
+- [x]Upload Video
+- [x]Log out
+- [x]See User
+- [x]Edit My Profile
 ***
 
 ## Routers
 >/ -> Home
-
 >/join -> Join
-
 >/login -> Login
-
 >/search -> Search
 
 >/users/:id -> See User
-
 >/users/logout -> Log Out
-
 >/users/edit -> Edit MY Profile
-
 >/users/delete -> Delete MY Profile
 
 >/videos/:id -> See Video
-
 >/videos/:id/edit -> Edit Video
-
 >/videos/:id/delete -> Delete Video
-
 >/videos/upload -> Upload Video
