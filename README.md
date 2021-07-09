@@ -1,7 +1,7 @@
 # Wetube Reloaded
 
 ## Use
->[x]Node.js
+> [x]Node.js
 >[x]nodemon : 자바스크립트 파일의 내용이 변경 될 때마다 이것을 감지하고 서버 프로세스를 재시작
 >[x]Express : 백엔드!
 >[x]babel : ES6로 쓰여진 자바스크립트 코드를 브라우저가 이해할 수 있게 해주는 역할
