@@ -10,6 +10,7 @@ const videoContainer = document.getElementById("videoContainer");
 const videoControls = document.getElementById("videoControls");
 
 let controlsTimeOut = null;
+let controlsMovementTimeout = null;
 let volumeValue = 0.5; // global variable
 video.volume = volumeValue;
 
@@ -74,18 +75,23 @@ const handleFullScreen = () => {
     }
 };
 
+const hideControls = () => videoControls.classList.remove("showing");
+
 const handleMouseMove = () => {
     if(controlsTimeOut) {
         clearTimeout(controlsTimeOut);
         controlsTimeOut = null;
     }
+    if(controlsMovementTimeout){
+        clearTimeout(controlsMovementTimeout);
+        controlsMovementTimeout = null;
+    }
     videoControls.classList.add("showing");
+    controlsMovementTimeout = setTimeout(hideControls, 3000);
 };
 
 const handleMouseLeave = () => {
-    controlsTimeOut = setTimeout(() => { // 지연시간 주기
-        videoControls.classList.remove("showing");
-    }, 3000);
+    controlsTimeOut = setTimeout(hideControls, 3000); // setTimeout : 딜레이를 넣어준다.
 }
 
 playBtn.addEventListener("click", handlePlayClick);
