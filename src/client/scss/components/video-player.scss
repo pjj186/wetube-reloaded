@@ -32,12 +32,14 @@
       justify-content: space-around;
       .videoControls__playBtn {
         margin: 0px 15px;
+        cursor: pointer;
       }
       .videoControls__time {
         font-size: 12px;
       }
     }
     .videoControls__volume {
+      cursor: pointer;
       display: flex;
       align-items: center;
       span {
@@ -47,5 +49,8 @@
         }
       }
     }
+  }
+  #fullScreen {
+    cursor: pointer;
   }
 }
