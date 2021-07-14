@@ -1,3 +1,4 @@
+import bodyParser from "body-parser";
 import regeneratorRuntime from "regenerator-runtime";
 
 const startBtn = document.getElementById("startBtn");
@@ -5,9 +6,14 @@ const video = document.getElementById("preview");
 
 let stream;
 let recorder;
+let videoFile;
 
 const handleDownload = () => {
-
+    const a = document.createElement("a");
+    a.href = videoFile;
+    a.download = "MyRecording.webm";
+    document.body.appendChild(a);
+    a.click();
 };
 
 const handleStop = () => {
@@ -29,7 +35,7 @@ const handleStart = () => {
         // 우리 서버에는 존재하지 않는 URL
         // 여기서 만들어진 URL은 브라우저에서 만들어진 것이고, 접근할 수 있는 파일을 가리킨다.
         // 즉 파일은 브라우저의 메모리 상에 있다는 것을 의미
-        const videoFile = URL.createObjectURL(event.data);
+        videoFile = URL.createObjectURL(event.data);
         video.srcObject = null;
         video.src = videoFile;
         video.loop = true;
