@@ -10,6 +10,7 @@ module.exports = {
     entry: { 
         main: "./src/client/js/main.js",
         videoPlayer: "./src/client/js/videoPlayer.js",
+        recorder: "./src/client/js/recorder.js",
     },
     mode: 'development', // development, production 두 가지 모드가있는데 기본값은 production이다. 개발중일땐 development 모드로 설정, 완성하면 production
     watch: true,
