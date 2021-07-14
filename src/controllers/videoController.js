@@ -135,9 +135,11 @@ export const registerView = async(req, res) => {
     const {id} = req.params;
     const video = await Video.findById(id);
     if(!video) {
-        return res.status(404);
+        return res.sendStatus(404);
     }
     video.meta.views = video.meta.views + 1;
     await video.save();
-    return res.status(200);
+    // status() 와 sendStatus()의 차이점은 status()는 상태코드와 같이 템플릿을 렌더링할때 사용하고
+    // sendStatus()는 상태코드를 보내고 연결을 끝내는것
+    return res.sendStatus(200);
 };
