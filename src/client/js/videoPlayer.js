@@ -17,13 +17,15 @@ let controlsMovementTimeout = null;
 let volumeValue = 0.5; // global variable
 video.volume = volumeValue;
 
+const playControls = () => playBtnIcon.classList = video.paused ? "fas fa-play" : "fas fa-pause";
+
 const handlePlayClick = (e) => {
     if (video.paused) {
         video.play();
     } else {
         video.pause();
     }
-    playBtnIcon.classList = video.paused ? "fas fa-play" : "fas fa-pause";
+    playControls();
 };
 
 const handleMuteClick = (e) => {
@@ -105,7 +107,7 @@ const handleVideoClick = (event) => {
     } else {
         video.pause();
     }
-
+    playControls();
 };
 
 const handleVideoKeydown = (event) => {
@@ -116,6 +118,7 @@ const handleVideoKeydown = (event) => {
             video.pause();
         }
     }
+    playControls();
 };
 
 playBtn.addEventListener("click", handlePlayClick);
