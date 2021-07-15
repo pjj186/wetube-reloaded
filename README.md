@@ -21,6 +21,10 @@
 > 4. style-loader : CSS를 DOM에 주입해주는 역할
 > 5. MiniCssExtractPlugin : javascript 파일에서 css를 넣고 싶지 않고, 분리된 css 파일을 사용하기 위해 설치한 플러그인 (style-loader 대신 사용)
 
+- [x] FFmpeg : 미디어 파일을 다루는 데 사용! 포맷변환, 오디오 추출 등 대신 실행비용이 크다.
+- [x] WebAssembly : 프론트엔드에서 매우 빠른 코드를 실행할 수 있게 해준다. 즉, 실행 비용이 큰 프로그램들을 브라우저에서 실행 할 수 있음 (하지만 복잡하기 때문에, 일반적으로는 WebAssembly를 많이 다루지 않을것)
+- [x] ffmpeg.wasm : FFmpeg 와 WebAssembly 의 두가지 개념을 결합한 것, 비디오를 변환하기 위해 사용자의 컴퓨터를 사용함. 즉, 사용자의 브라우저에서 비디오를 변환하는것 (서버의 처리 능력을 사용하지 않고, 사용자 컴퓨터의 처리 능력을 사용함)
+ 
 ***
 
 ## Functions
