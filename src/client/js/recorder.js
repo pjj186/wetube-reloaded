@@ -1,4 +1,3 @@
-import bodyParser from "body-parser";
 import regeneratorRuntime from "regenerator-runtime";
 
 const startBtn = document.getElementById("startBtn");
@@ -28,7 +27,7 @@ const handleStart = () => {
     startBtn.innerText = "Stop Recording";
     startBtn.removeEventListener("click", handleStart);
     startBtn.addEventListener("click", handleStop);
-    recorder = new MediaRecorder(stream); // 녹화를 하기 위해 필요
+    recorder = new MediaRecorder(stream, {mimeType:"video/webm"}); // 녹화를 하기 위해 필요
     recorder.ondataavailable = (event) => { // stop()이 실행되면 dataavailable event가 발생
         // URL.createObjectURL(event.data)의 의미
         // 단순히 브라우저의 메모리를 가리키기만 하고 있는 URL
