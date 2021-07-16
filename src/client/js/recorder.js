@@ -32,7 +32,7 @@ const handleDownload = async() => {
     const mp4File = ffmpeg.FS("readFile", "output.mp4");
     const thumbFile = ffmpeg.FS("readFile", "thumbnail.jpg");
     
-    const mp4Blob = new Blob([mp4File.buffer], {type: "video/mp4"});
+    const mp4Blob = new Blob([mp4File.buffer], { type: "video/mp4" });
     const thumbBlob = new Blob([thumbFile.buffer], { type: "image/jpg" });
 
     const mp4Url = URL.createObjectURL(mp4Blob);
