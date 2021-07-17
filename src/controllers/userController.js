@@ -150,6 +150,7 @@ export const finishGithubLogin = async(req, res) => {
 
 export const logout = (req, res) => {
     req.session.destroy();
+    req.flash("info", "Bye Bye");
     return res.redirect("/");
 };
 
@@ -207,6 +208,7 @@ export const postEdit = async(req, res) => {
 export const getChangePassword = (req, res) => {
     // 깃허브를 통해 계정을 만든 경우에는 비밀번호 변경을 볼 수 없어야 함
     if(req.session.user.socialOnly === true) {
+        req.flash("error", "Can't change password");
         return res.redirect("/");
     }
     return res.render("users/change-password", { 
@@ -237,7 +239,7 @@ export const postChangePassword = async(req, res) => {
     }
     user.password = newPassword;
     user.save();
-
+    req.flash("info", "Password updated");
     return res.redirect("/users/logout");
 };
 
