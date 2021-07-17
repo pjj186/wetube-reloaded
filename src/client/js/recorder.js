@@ -73,18 +73,10 @@ const handleDownload = async() => {
     actionBtn.addEventListener("click", handleStart);
 };
 
-const handleStop = () => {
-    actionBtn.innerText = "Download Recording";
-    actionBtn.removeEventListener("click", handleStop);
-    actionBtn.addEventListener("click", handleDownload);
-    
-    recorder.stop();
-}
-
 const handleStart = () => {
-    actionBtn.innerText = "Stop Recording";
+    actionBtn.innerText = "Recording";
+    actionBtn.disabled = true;
     actionBtn.removeEventListener("click", handleStart);
-    actionBtn.addEventListener("click", handleStop);
     recorder = new MediaRecorder(stream, {mimeType:"video/webm"}); // 녹화를 하기 위해 필요
     recorder.ondataavailable = (event) => { // stop()이 실행되면 dataavailable event가 발생
         // URL.createObjectURL(event.data)의 의미
@@ -97,15 +89,24 @@ const handleStart = () => {
         video.src = videoFile;
         video.loop = true;
         video.play();
+        actionBtn.innerText = "Download";
+        actionBtn.disabled = false;
+        actionBtn.addEventListener("click", handleDownload);
     };
     recorder.start(); // 녹화 시작!
+    setTimeout(() => { // 5초동안 녹화 후 STOp
+        recorder.stop();
+    }, 5000);
 }
 
 // 프론트엔드에서 async, await를 사용하려면 regeneratorRuntime 을 설치해야함
 const init = async() => {
     stream = await navigator.mediaDevices.getUserMedia({
         audio:false,
-        video:true,
+        video: {
+            width: 1024,
+            height: 576,
+        },
     });
     // srcObject는 video가 가질 수 있는 무언가를 의미
     // srcObject는 MediaStream, MediaSource, Blob, File을 실행할 때 video에 주는 무언가를 의미
