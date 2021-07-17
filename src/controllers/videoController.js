@@ -51,8 +51,7 @@ export const postEdit = async(req, res) => { // 변경사항을 저장해주는 
         description:description,
         hashtags: Video.formatHashtags(hashtags),
     });
-    console.log(video);
-    console.log(videoModified);
+    req.flash("success", "Changes saved.");
     if(!video){
         return res.status(404).render("404", {pageTitle: "Video not found."});
     }
