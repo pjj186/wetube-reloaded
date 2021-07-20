@@ -15,7 +15,8 @@ const logger = morgan("dev");
 app.set("view engine", "pug"); // 뷰 엔진을 pug로 설정
 app.set("views", process.cwd() + "/src/views"); 
 app.use(logger);
-app.use(express.urlencoded({extended: true})); // URL인코더 : exprees 가 form를 이해할 수 있게 하는 미들웨어 
+app.use(express.urlencoded({extended: true})); // URL인코더 : exprees 가 form를 이해할 수 있게 하는 미들웨어
+app.use(express.json()); // string을 받아서 json으로 바꿔주는 미들웨어
 
 app.use(
     session({

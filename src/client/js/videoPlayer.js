@@ -110,16 +110,16 @@ const handleVideoClick = (event) => {
     playControls();
 };
 
-const handleVideoKeydown = (event) => {
-    if(event.code === "Space") {
-        if(video.paused){
-            video.play();
-        } else {
-            video.pause();
-        }
-    }
-    playControls();
-};
+// const handleVideoKeydown = (event) => {
+//     if(event.code === "Space") {
+//         if(video.paused){
+//             video.play();
+//         } else {
+//             video.pause();
+//         }
+//     }
+//     playControls();
+// };
 
 const handleEnded = () => {
     const {id} = videoContainer.dataset;
@@ -135,7 +135,7 @@ video.addEventListener("loadeddata", handleLoadedMetadata);
 video.addEventListener("timeupdate", handleTimeUpdate);
 video.addEventListener("ended", handleEnded);
 video.addEventListener("click", handleVideoClick);
-window.addEventListener("keydown", handleVideoKeydown);
+// window.addEventListener("keydown", handleVideoKeydown);
 timeline.addEventListener("input", handleTimelineChange);
 fullScreenBtn.addEventListener("click", handleFullScreen);
 videoContainer.addEventListener("mousemove", handleMouseMove);
