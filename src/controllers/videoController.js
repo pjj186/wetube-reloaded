@@ -10,14 +10,16 @@ export const home = async(req, res) => {
         .sort({createdAt:"desc"})
         .populate("owner");
     const user = await User.findById(_id);
-    console.log(user);
     return res.render("home", {pageTitle: "Home", videos});
 };
 export const watch = async(req, res) => {
     const { id } = req.params; // = const id = req.params.id;
     // populate를 하면 mongoose가 id를 이용해 video를 찾고 그 안에서 owner도 찾아준다.
     // ref : "User" 이므로 owner 안에 User 오브젝트를 받아온다.
-    const video = await Video.findById(id).populate("owner");
+    const video = await Video.findById(id)
+        .populate("owner")
+        .populate("comments");
+    console.log(video);
     if(!video) {
         return res.status(404).render("404", { 
             pageTitle: "Video not found. "});
@@ -163,5 +165,7 @@ export const createComment = async(req, res) => {
         owner: user._id,
         video: id,
     });
+    video.comments.push(comment._id);
+    video.save();
     return res.sendStatus(201);
 }
