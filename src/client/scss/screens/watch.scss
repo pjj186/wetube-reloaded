@@ -26,10 +26,17 @@
   margin: 0 auto;
   margin-top: 20px;
   .video__comment {
+    display: flex;
+    position: relative;
     padding: 10px;
     border-radius: 9999px;
     background-color: white;
     color: black;
     margin-bottom: 10px;
+    .video__comment-del {
+      position: absolute;
+      right: 15px;
+      cursor: pointer;
+    }
   }
 }
