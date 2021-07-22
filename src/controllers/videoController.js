@@ -27,7 +27,7 @@ export const watch = async(req, res) => {
 };
     
 export const getEdit = async(req, res) => { // form을 화면에 보여주는 녀석
-    const { id } = req.params;
+    const { id } = req.params; // videoId
     const {
         user: { _id },
     } = req.session;
