@@ -4,7 +4,8 @@
 - [x] Node.js
 - [x] nodemon : 자바스크립트 파일의 내용이 변경 될 때마다 이것을 감지하고 서버 프로세스를 재시작
 - [x] Express : 백엔드!
-- [x] babel : ES6로 쓰여진 자바스크립트 코드를 브라우저가 이해할 수 있게 해주는 역할
+- [x] babel-node : ES6로 쓰여진 자바스크립트 코드를 브라우저가 이해할 수 있게 해주는 역할
+- [x] babel-cli : babel-node는 실제로 서비스 되는 곳이 아니라 개발 할 때 사용되는 목적으로 사용하는데, babel-node를 사용하면 performance 문제가 있다. 그래서 실제로 서비스하기 위해선 코드를 일반적인 javascript 코드로 바꿔줘야한다. 이를 위해서 사용하는것이 Babel CLI 이다.
 - [x] Pug : 템플릿 엔진
 - [x] mongoDB : 데이터베이스
 - [x] mongoose : MongoDB를 자바스크립트 코드를 이용하여 다룰수 있게 하는 미들웨어
@@ -47,6 +48,7 @@
 - [x] Log out
 - [x] See User
 - [x] Edit My Profile
+- [x] Comment 
 ***
 
 ## Routers
