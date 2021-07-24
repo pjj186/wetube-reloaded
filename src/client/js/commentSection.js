@@ -13,7 +13,7 @@ const addComment = (text, id) => {
     newComment.dataset.id = id;
     newComment.className = "video__comment";
     const icon = document.createElement("i");
-    icon.className = " fas fa-comment";
+    icon.className = "fas fa-comment";
     const span = document.createElement("span");
     span.innerText = ` ${text}`;
     const span2 = document.createElement("span");
@@ -28,7 +28,7 @@ const addComment = (text, id) => {
 
 const handleSubmit = async (event) => {
     event.preventDefault();
-    const textarea = form.querySelector("textarea");
+    const textarea = form.querySelector("input");
     const text = textarea.value;
     const videoId = videoContainer.dataset.id;
     if(text === "") {

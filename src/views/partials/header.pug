@@ -1,26 +1,27 @@
 header
+    i.fas.fa-bars
     a(href="/").header__logo
-        i.fab.fa-youtube
+        img(src="/images/colalogo.png").header__logo-image
     nav 
         ul
-            li 
+            li.header__menu  
                 a(href="/search")
                     i.fas.fa-search
             if loggedIn
-                li
+                li.header__menu
                     a(href="/videos/upload") Upload Video
-                li 
+                li.header__menu 
                     a(href="/users/edit") Edit Profile
-                li 
+                li.header__menu  
                     a(href="/users/logout") Logout
-                li 
+                li.header__avatar 
                     a(href=`/users/${loggedInUser._id}`)
                         if loggedInUser.avatarUrl === ""
                             span 😋
                         else 
                             img.header__avatar(src="/" + loggedInUser.avatarUrl)
             else
-                li
+                li.header__menu 
                     a(href="/login") Login 
-                li 
+                li.header__menu  
                     a(href="/join").header__btn Join

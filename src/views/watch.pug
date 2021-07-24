@@ -1,6 +1,7 @@
 extends base.pug
 
 block content
+    img(src="/images/icecola.png").icecola
     div#videoContainer(data-id = video._id)
         video(src="/" + video.fileUrl)
         div#videoControls.videoControls
@@ -25,20 +26,24 @@ block content
         small.video__owner Uploaded by 
             a(href=`/users/${video.owner._id}`)=video.owner.name
         small.video__createdAt=new Date(video.createdAt).toLocaleDateString("ko-kr", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})
+        hr
+        |Description :
+        br
+        span.video__description=video.description
+        hr
         if String(video.owner._id) === String(loggedInUser._id)
-            a(href=`${video.id}/edit`) Edit Video &rarr;
-            br
-            a(href=`${video.id}/delete`) Delete Video &rarr;
+            a(href=`${video.id}/edit`).editvideo Edit Video &rarr;
+            a(href=`${video.id}/delete`).deletevideo Delete Video &rarr;
     if loggedIn
         div.video__add-comments
             form.video__comment-form#commentForm
-                textarea(cols="30", rows="10", placeholder="Write a nice comment...")
+                input(type="text", placeholder="Write a nice comment...")
                 button Add Comment
     div.video__comments
         ul
             each comment in video.comments.reverse()
                 li.video__comment(data-id = comment._id)
-                    i.fas.fa-comment
+                    img(src="/" + comment.owner.avatarUrl).commentAvatar
                     span  #{comment.text}
                     if String(comment.owner._id) === String(loggedInUser._id)
                         span.video__comment-del ❌

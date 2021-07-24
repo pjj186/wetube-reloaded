@@ -12,14 +12,14 @@ input[type="submit"] {
   all: unset;
   padding: 15px 20px;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: black;
+  border: 2px solid rgb(255, 0, 0);
+  background-color: white;
   margin-bottom: 5px;
   font-size: 16px;
-  color: white;
+  color: rgb(0, 0, 0);
   width: 90%;
   &::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -27,8 +27,8 @@ input[type="submit"],
 .social__btn {
   font-weight: 600;
   padding: 12px 20px;
-  background-color: white !important;
-  color: rgba($color: $red, $alpha: 1) !important;
+  background-color: rgba(255, 0, 0, 0.719) !important;
+  color: rgba($color: black, $alpha: 1) !important;
   text-align: center !important;
   border-radius: 5px;
   cursor: pointer;

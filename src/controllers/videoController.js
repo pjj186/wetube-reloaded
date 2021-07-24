@@ -18,7 +18,9 @@ export const watch = async(req, res) => {
     // ref : "User" 이므로 owner 안에 User 오브젝트를 받아온다.
     const video = await Video.findById(id)
         .populate("owner")
-        .populate("comments");
+        .populate({ path:"comments", populate: {
+            path: "owner" }
+        });
     if(!video) {
         return res.status(404).render("404", { 
             pageTitle: "Video not found. "});
@@ -155,7 +157,6 @@ export const createComment = async(req, res) => {
     } = req;
 
     const video = await Video.findById(id);
-
     if(!video){
         return res.sendStatus(404);
     }
@@ -166,7 +167,7 @@ export const createComment = async(req, res) => {
     });
     video.comments.push(comment._id);
     video.save();
-    return res.status(201).json({ newCommentId: comment._id });
+    return res.status(201).json({ newCommentId: comment._id});
 };
 
 export const deleteComment = async(req, res) => {

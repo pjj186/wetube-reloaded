@@ -7,3 +7,46 @@ block content
             +video(video)
         else 
             span.empty__message No videos found.
+    img(src="images/colasanta.png").santaimg
+    div.video__home-panel
+        hr
+        i.fas.fa-home.homeicon
+            span Home
+        hr
+        span.subsection Subscribe
+        div.nomad-image.subscribe
+            img(src="images/nomad.png").panel-image
+            a(href="https://www.youtube.com/channel/UCUpJs89fSBXNolQGOYKn0YQ" target="_blank") Nomad Academy
+        div.gura-image.subscribe
+            img(src="images/GawrGura.png").panel-image
+            a(href="https://www.youtube.com/channel/UCoSrY_IQQVpmIRZ9Xf-y93g" target="_blank") Gawr Gura
+        div.ina-image.subscribe
+            img(src="images/Ninomae_Ina.png").panel-image
+            a(href="https://www.youtube.com/channel/UCMwGHR0BTZuLsmjY_NT5Pwg" target="_blank") Ninomae Ina'nis
+        div.ame-image.subscribe
+            img(src="images/Watson_Amelia.png").panel-image
+            a(href="https://www.youtube.com/channel/UCyl1z3jo3XHR1riLFKG5UAg" target="_blank") Watson Amelia
+        div.kiara-image.subscribe
+            img(src="images/Takanashi_Kiara.png").panel-image
+            a(href="https://www.youtube.com/channel/UCHsx4Hqa-1ORjQTh9TYDhww" target="_blank") Takanashi Kiara
+        div.calli-image.subscribe
+            img(src="images/Mori_Calliope.png").panel-image
+            a(href="https://www.youtube.com/channel/UCL_qhgtOy0dy1Agp8vkySQg" target="_blank") Mori Calliope
+        hr
+        i.fas.fa-film.homeicon
+            span MOVIE
+        i.fas.fa-gamepad.homeicon
+            span GAME
+        i.fas.fa-running.homeicon
+            span SPORTS
+        i.fas.fa-university.homeicon
+            span EDUCATION
+        i.fas.fa-music.homeicon
+            span MUSIC
+        hr
+        i.fas.fa-cog.homeicon
+            span SETTINGS
+    img(src="/images/london.png").bottomimg
+
+block scripts
+    script(src="/static/js/home.js")

@@ -2,7 +2,7 @@ import multer from "multer";
 
 export const localsMiddleware = (req, res, next) => {
     res.locals.loggedIn = Boolean(req.session.loggedIn);
-    res.locals.siteName="Wetube";
+    res.locals.siteName="ColaTube";
     // loggedInUser는 req.session.user인데, 이게 undefined일 수가 있다.
     // 그래서 뒤에 or과 빈 오브젝트를 추가하여 오류페이지 방지
     res.locals.loggedInUser = req.session.user || {};
