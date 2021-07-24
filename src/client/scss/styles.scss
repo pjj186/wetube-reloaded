@@ -32,6 +32,8 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: $bg;
   color: black;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 main {

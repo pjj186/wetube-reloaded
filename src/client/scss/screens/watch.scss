@@ -1,11 +1,14 @@
 .video__data {
+  position: relative;
+  left: -250px;
+  top: 10px;
   padding: 10px;
   background-color: #e9e9e9ec;
-  border-radius: 15px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  width: 980px;
   .video__description {
     font-weight: 400;
     font-size: 18px;
@@ -33,7 +36,7 @@
     font-weight: 600;
     color: white;
     border-radius: 20px;
-    padding: 3px;
+    padding: 8px;
     margin-top: 5px;
     margin-bottom: 5px;
     text-align: center;
@@ -44,19 +47,17 @@
     font-weight: 600;
     color: white;
     border-radius: 20px;
-    padding: 3px;
+    padding: 8px;
     text-align: center;
     width: 120px;
     background-color: #e31d2e;
   }
 }
 .video__add-comments {
-  position: relative;
-  left: -95px;
   .video__comment-form {
     padding: 5px;
     display: flex;
-    max-width: 1000px;
+    max-width: 650px;
     background-color: white;
     input {
       background-color: white;
@@ -77,9 +78,12 @@
 }
 
 .video__comments {
+  position: absolute;
+  top: 150px;
+  right: 100px;
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
+  max-width: 650px;
   width: 100%;
   margin-top: 20px;
   .fas.fa-comment {
@@ -98,12 +102,24 @@
     background-color: #e9e9e9c4;
     color: black;
     margin-bottom: 10px;
+    .comment-owner {
+      font-weight: 600;
+    }
     .video__comment-del {
+      border-radius: 15px;
+      padding: 8px;
+      background-color: #979797b7;
+      color: black;
+      font-weight: 600;
       position: absolute;
       right: 15px;
       cursor: pointer;
     }
   }
+}
+
+.comments {
+  padding-bottom: 10px;
 }
 
 .commentAvatar {
@@ -120,4 +136,25 @@
   left: 0;
   bottom: -200px;
   opacity: 0.5;
+}
+
+#videoContainer {
+  position: relative;
+  top: 10px;
+  left: -250px;
+  width: 1000px;
+  height: 550px;
+}
+.uploader__info {
+  display: flex;
+  align-items: center;
+  span {
+    font-weight: 600;
+  }
+  .uploader {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
 }

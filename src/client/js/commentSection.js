@@ -17,7 +17,7 @@ const addComment = (text, id) => {
     const span = document.createElement("span");
     span.innerText = ` ${text}`;
     const span2 = document.createElement("span");
-    span2.innerText = "❌";
+    span2.innerText = "DELETE";
     span2.className = "video__comment-del";
     newComment.appendChild(icon);
     newComment.appendChild(span);

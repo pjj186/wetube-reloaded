@@ -19,34 +19,48 @@ block content
                     i.fas.fa-volume-up 
             div
                 span#fullScreen
-                    i.fas.fa-expand
-            
+                    i.fas.fa-expand        
     div.video__data
         p.video__title=video.title
         small.video__owner Uploaded by 
             a(href=`/users/${video.owner._id}`)=video.owner.name
         small.video__createdAt=new Date(video.createdAt).toLocaleDateString("ko-kr", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})
         hr
+        div.uploader__info
+            a(href=`/users/${video.owner._id}`)
+                img(src="/" + video.owner.avatarUrl).uploader
+            span=video.owner.name
+        br
         |Description :
+        br
         br
         span.video__description=video.description
         hr
         if String(video.owner._id) === String(loggedInUser._id)
             a(href=`${video.id}/edit`).editvideo Edit Video &rarr;
             a(href=`${video.id}/delete`).deletevideo Delete Video &rarr;
-    if loggedIn
-        div.video__add-comments
-            form.video__comment-form#commentForm
-                input(type="text", placeholder="Write a nice comment...")
-                button Add Comment
     div.video__comments
+        span.comments &nbsp Comments
+            hr
+        if loggedIn
+            div.video__add-comments
+                form.video__comment-form#commentForm
+                    input(type="text", placeholder="Write a nice comment...")
+                    button Add Comment
+        else
+            div.video__add-comments
+                form.video__comment-form#commentForm
+                    input(type="text", placeholder="You need to log in to write comments." disabled)
         ul
             each comment in video.comments.reverse()
                 li.video__comment(data-id = comment._id)
-                    img(src="/" + comment.owner.avatarUrl).commentAvatar
+                    a(href=`/users/${comment.owner._id}`)
+                        img(src="/" + comment.owner.avatarUrl).commentAvatar
+                    span.comment-owner #{comment.owner.name}
+                    span &nbsp : &nbsp
                     span  #{comment.text}
                     if String(comment.owner._id) === String(loggedInUser._id)
-                        span.video__comment-del ❌
+                        span.video__comment-del DELETE
 
 
 block scripts
