@@ -36,6 +36,7 @@
  
 - [x] Heroku : 프로젝트를 실제 서버에 배포할때 사용!
 - [x] MongoDB Atlas
+- [x] AWS S3 
 ***
 
 ## Functions
