@@ -18,12 +18,12 @@
       margin-top: 5px;
       font-size: 12px;
       align-items: center;
-      .video-mixin__avatar {
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        margin-right: 5px;
-      }
     }
+  }
+  .video-mixin__avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 5px;
   }
 }
