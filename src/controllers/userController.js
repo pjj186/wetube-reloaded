@@ -132,7 +132,7 @@ export const finishGithubLogin = async(req, res) => {
             // password 없이 Github의 데이터로 user를 생성
             user = await User.create({
                 avatarUrl: userData.avatar_url,
-                name: userData.name,
+                name: userData.name ? userData.name : "Unknown",
                 username: userData.login,
                 email: emailObj.email,
                 password:"",
