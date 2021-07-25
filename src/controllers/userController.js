@@ -193,7 +193,7 @@ export const postEdit = async(req, res) => {
         {
             // file.path는 multer에서 보내주는 url임.
             // 즉 uploads/avatars/파일명을 뜻한다.
-            avatarUrl: file ? file.path : avatarUrl,
+            avatarUrl: file ? file.location : avatarUrl,
             name, 
             email, 
             username, 
