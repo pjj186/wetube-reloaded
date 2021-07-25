@@ -16,8 +16,7 @@ module.exports = {
         commentSection: BASE_JS + "commentSection.js",
         home: BASE_JS + "home.js",
     },
-    mode: 'development', // development, production 두 가지 모드가있는데 기본값은 production이다. 개발중일땐 development 모드로 설정, 완성하면 production
-    watch: true,
+    // mode: 'development', // development, production 두 가지 모드가있는데 기본값은 production이다. 개발중일땐 development 모드로 설정, 완성하면 production
     plugins: [new MiniCssExtractPlugin({
         filename: "css/styles.css",
         })
