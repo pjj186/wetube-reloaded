@@ -21,13 +21,13 @@ block content
                 span#fullScreen
                     i.fas.fa-expand        
     div.video__data
+        small.video__hashtag=video.hashtags
         p.video__title=video.title
         small.video__owner Uploaded by 
             a(href=`/users/${video.owner._id}`)=video.owner.name
         small.video__createdAt=new Date(video.createdAt).toLocaleDateString("ko-kr", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})
         br
         br
-        small.video__hashtag=video.hashtags
         hr
         div.uploader__info
             a(href=`/users/${video.owner._id}`)
