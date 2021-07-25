@@ -8,6 +8,7 @@
   }
   .video-mixin__data {
     display: flex;
+    align-items: center;
     padding: 0px 15px;
     .video-mixin__avatar {
       width: 25px;
@@ -21,7 +22,6 @@
       margin-top: 10px;
     }
     .video-mixin__meta {
-      display: flex;
       margin-top: 5px;
       font-size: 12px;
       align-items: center;
