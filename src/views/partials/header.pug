@@ -17,8 +17,12 @@ header
                     a(href=`/users/${loggedInUser._id}`)
                         if loggedInUser.avatarUrl === ""
                             span 😋
-                        else 
-                            img.header__avatar(src="/" + loggedInUser.avatarUrl)
+                        else
+                            if loggedInUser.socialOnly
+                                img.header__avatar(src=loggedInUser.avatarUrl)
+                            else
+                                img.header__avatar(src="/" + loggedInUser.avatarUrl)
+
             else
                 li.header__menu 
                     a(href="/login") Login 
