@@ -128,6 +128,11 @@ const handleEnded = () => {
     });
 };
 
+if (video.readyState == 4) {
+    handleLoadedMetadata();
+    }
+
+
 playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMuteClick);
 volumeRange.addEventListener("input", handleVolumeChange);
