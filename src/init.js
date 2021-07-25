@@ -1,3 +1,4 @@
+import "regenerator-runtime";
 import "dotenv/config";
 import "./db"; // 파일 자체를 import, import 되는 순간, 자동적으로 실행
 import "./models/Video";
