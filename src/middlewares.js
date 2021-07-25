@@ -7,13 +7,21 @@ const s3 = new aws.S3({
         accessKeyId: process.env.AWS_ID,
         secretAccessKey: process.env.AWS_SECRET
     }
-})
+});
 
-const multerUploader = multerS3({
+const isHeroku = process.env.NODE_ENV === "production";
+
+const s3ImageUploader = multerS3({
     s3: s3,
-    bucket: 'colatube',
+    bucket: 'colatube/images',
     acl: "public-read",
-})
+});
+
+const s3VideoUploader = multerS3({
+    s3: s3,
+    bucket: 'colatube/videos',
+    acl: "public-read",
+});
 
 export const localsMiddleware = (req, res, next) => {
     res.locals.loggedIn = Boolean(req.session.loggedIn);
@@ -21,6 +29,7 @@ export const localsMiddleware = (req, res, next) => {
     // loggedInUser는 req.session.user인데, 이게 undefined일 수가 있다.
     // 그래서 뒤에 or과 빈 오브젝트를 추가하여 오류페이지 방지
     res.locals.loggedInUser = req.session.user || {};
+    res.locals.isHeroku = isHeroku;
     next();   
 };
 
@@ -59,12 +68,12 @@ export const avatarUpload = multer({
     limits: {
         fileSize: 3000000,
     },
-    storage: multerUploader,
+    storage: isHeroku ? s3ImageUploader : undefined,
 });
 export const videoUpload = multer({
     dest: "uploads/videos/",
     limits: {
         fileSize: 30000000,
     },
-    storage: multerUploader,
+    storage: isHeroku ? s3VideoUploader : undefined,
 })

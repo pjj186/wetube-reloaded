@@ -188,12 +188,13 @@ export const postEdit = async(req, res) => {
         }
 
     }
+    const isHeroku = process.env.NODE_ENV === "production";
     const updatedUser = await User.findByIdAndUpdate(
         _id, 
         {
             // file.path는 multer에서 보내주는 url임.
             // 즉 uploads/avatars/파일명을 뜻한다.
-            avatarUrl: file ? file.location : avatarUrl,
+            avatarUrl: file ? (isHeroku ? file.location : file.path) : avatarUrl,
             name, 
             email, 
             username, 
