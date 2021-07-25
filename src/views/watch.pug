@@ -31,7 +31,7 @@ block content
         hr
         div.uploader__info
             a(href=`/users/${video.owner._id}`)
-                img(src="/" + video.owner.avatarUrl).uploader
+                img(src=video.owner.avatarUrl).uploader
             span=video.owner.name
         br
         |Description :
@@ -58,7 +58,7 @@ block content
             each comment in video.comments.reverse()
                 li.video__comment(data-id = comment._id)
                     a(href=`/users/${comment.owner._id}`)
-                        img(src="/" + comment.owner.avatarUrl).commentAvatar
+                        img(src=comment.owner.avatarUrl).commentAvatar
                     span.comment-owner #{comment.owner.name}
                     span &nbsp : &nbsp
                     span  #{comment.text}
