@@ -116,6 +116,8 @@ input[type="submit"],
 }
 
 .search_form {
+  display: flex;
+  justify-content: center;
   input {
     all: unset;
     padding: 5px 5px;
@@ -130,9 +132,8 @@ input[type="submit"],
   }
   button {
     padding: 5px 5px;
-    width: 50px;
+    width: 70px;
     font-size: 15px;
-    background-color: rgba(0, 0, 0, 0);
     text-align: center;
     cursor: pointer;
   }
