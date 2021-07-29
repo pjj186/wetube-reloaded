@@ -47,16 +47,18 @@ input[type="submit"],
 }
 
 .editvideoform {
-  all: unset;
-  padding: 15px 20px;
-  border-radius: 5px;
-  border: 2px solid rgb(255, 0, 0);
-  background-color: white;
-  margin-bottom: 5px;
-  font-size: 16px;
-  color: rgb(0, 0, 0);
-  width: 90%;
-  &::placeholder {
-    color: rgba(0, 0, 0, 0.7);
+  input {
+    all: unset;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(255, 0, 0);
+    background-color: white;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    width: 90%;
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.7);
+    }
   }
 }
