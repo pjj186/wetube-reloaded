@@ -1,4 +1,5 @@
 .search__form {
+  height: 250px;
   max-width: 700px;
   display: flex;
   align-items: center;
@@ -12,7 +13,6 @@
   }
   input {
     all: unset;
-    padding: 10px 10px;
     border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: black;
