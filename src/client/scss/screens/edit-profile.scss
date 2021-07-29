@@ -1,10 +1,9 @@
 .edit-profile__form {
   form {
-    max-width: 420px;
+    max-width: 380px;
     margin: 0 auto;
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid rgba($color: #fff, $alpha: 0.2);
     input {
       all: unset;
       padding: 15px 20px;
@@ -21,7 +20,8 @@
     }
   }
   label {
-    font-size: 14px;
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 10px;
     display: block;
   }
