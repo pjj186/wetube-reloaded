@@ -29,7 +29,7 @@ header {
       text-transform: uppercase;
     }
     .header__menu:hover {
-      animation: vibrate-1 0.4 linear forward;
+      animation: vibrate-1 0.4 linear infinite;
     }
     .header__avatar {
       width: 50px;
