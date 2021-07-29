@@ -1,21 +1,23 @@
 .search__form {
+  display: flex;
+  align-items: center;
   form {
     height: 250px;
     max-width: 700px;
     display: flex;
     align-items: center;
     position: relative;
-    button {
-      all: unset;
-    }
-    button {
-      position: absolute;
-      right: -15px;
-      font-size: 25px;
-      background-color: rgba(0, 0, 0, 0);
-      text-align: center;
-      cursor: pointer;
-    }
+  }
+  button {
+    all: unset;
+  }
+  button {
+    position: absolute;
+    right: -15px;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    cursor: pointer;
   }
 
   .fa-search {
