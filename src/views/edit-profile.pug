@@ -4,16 +4,17 @@ block content
     img(src="/images/colaform.png").edit-profile__img
     div.empty_box
     div.empty_box
-    form(method="POST", enctype="multipart/form-data").edit-profile__form
-        label(for="avatar") Avatar
-        input(type="file", id="avatar", name="avatar", accept="image/*")
-        input(placeholder="Name", name="name", type="text", required, value=loggedInUser.name)
-        input(placeholder="Email", name="email", type="email", required, value=loggedInUser.email)
-        input(placeholder="Username", name="username", type="text", required, value=loggedInUser.username)
-        input(placeholder="Location", name="location", type="text", required, value=loggedInUser.location)
-        input(type="submit", value="Update Profile")
-        if !loggedInUser.socialOnly
-            div.edit-profile__password
-                a(href="change-password") Change Password &rarr;
+    div.edit-profile_container
+        form(method="POST", enctype="multipart/form-data").edit-profile__form
+            label(for="avatar") Avatar
+            input(type="file", id="avatar", name="avatar", accept="image/*")
+            input(placeholder="Name", name="name", type="text", required, value=loggedInUser.name)
+            input(placeholder="Email", name="email", type="email", required, value=loggedInUser.email)
+            input(placeholder="Username", name="username", type="text", required, value=loggedInUser.username)
+            input(placeholder="Location", name="location", type="text", required, value=loggedInUser.location)
+            input(type="submit", value="Update Profile")
+            if !loggedInUser.socialOnly
+                div.edit-profile__password
+                    a(href="change-password") Change Password &rarr;
     if errorMessage
         span=errorMessage 
