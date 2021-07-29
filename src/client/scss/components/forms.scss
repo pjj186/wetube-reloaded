@@ -116,6 +116,7 @@ input[type="submit"],
 }
 
 .search_form {
+  position: relative;
   display: flex;
   align-items: center;
   input {
@@ -131,7 +132,7 @@ input[type="submit"],
     }
   }
   button {
-    position: relative;
+    position: absolute;
     left: 0;
     padding: 2px 5px;
     width: 70px;
