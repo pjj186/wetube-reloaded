@@ -3,13 +3,6 @@ include mixins/video
 
 block content
     img(src="/images/icecola.png").icecola
-    form(method="GET").search__form
-        input(placeholder="Search by title", name="keyword", type="text")
-        button
-            i.fas.fa-search
-    hr
-
-
     div.video-grid
         each video in videos
             +video(video)
