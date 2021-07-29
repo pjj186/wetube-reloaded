@@ -15,10 +15,10 @@ header
                     a(href="/users/edit") Edit Profile
                 li.header__menu  
                     a(href="/users/logout") Logout
-                li.header__avatar 
+                li 
                     a(href=`/users/${loggedInUser._id}`)
                         if loggedInUser.avatarUrl === ""
-                            span 😋
+                            span.header__avatar 😋
                         else
                             if loggedInUser.avatarUrl
                                 if loggedInUser.avatarUrl.includes("github")
