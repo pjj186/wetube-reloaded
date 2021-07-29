@@ -3,11 +3,12 @@ header
         img(src="/images/colalogo.png").header__logo-image
     nav 
         ul
-            li.header__menu  
-                form(method="GET" action="/search").search__form
-                    input(placeholder="Search by title", name="keyword", type="text")
-                    button
-                        i.fas.fa-search
+            li.header__menu
+                div.search_form
+                    form(method="GET" action="/search")
+                        input(placeholder="Search by title", name="keyword", type="text")
+                        button
+                            i.fas.fa-search
             if loggedIn
                 li.header__menu
                     a(href="/videos/upload") Upload Video
