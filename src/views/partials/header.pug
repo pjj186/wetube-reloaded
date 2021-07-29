@@ -4,8 +4,10 @@ header
     nav 
         ul
             li.header__menu  
-                a(href="/search")
-                    i.fas.fa-search
+                form(method="GET").search__form
+                    input(placeholder="Search by title", name="keyword", type="text")
+                    button
+                        i.fas.fa-search
             if loggedIn
                 li.header__menu
                     a(href="/videos/upload") Upload Video
