@@ -125,14 +125,14 @@ input[type="submit"],
     width: 400px;
     background-color: white;
     font-size: 12px;
-    margin-left: 1px;
+    margin-left: 2px;
     color: rgb(0, 0, 0);
     &::placeholder {
       color: rgba(0, 0, 0, 0.7);
     }
   }
   button {
-    padding: 2.8px 5px;
+    padding: 2.9px 5px;
     width: 70px;
     font-size: 15px;
     text-align: center;
