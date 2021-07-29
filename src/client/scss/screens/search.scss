@@ -6,12 +6,6 @@
     align-items: center;
     position: relative;
   }
-
-  .fa-search {
-    border-radius: 50%;
-    padding: 12px;
-    background-color: rgba(0, 0, 0, 0.185);
-  }
   input {
     all: unset;
     border-radius: 5px;
@@ -26,6 +20,11 @@
     all: unset;
   }
   button {
+    .fa-search {
+      border-radius: 50%;
+      padding: 12px;
+      background-color: rgba(0, 0, 0, 0.185);
+    }
     position: absolute;
     right: -15px;
     font-size: 25px;
