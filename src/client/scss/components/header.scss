@@ -28,6 +28,9 @@ header {
       font-weight: 600;
       text-transform: uppercase;
     }
+    .header__menu:hover {
+      animation: vibrate-1 0.4 linear forward;
+    }
     .header__avatar {
       width: 50px;
       height: 50px;
@@ -43,5 +46,32 @@ header {
     background-color: white;
     color: black;
     padding: 5px 10px;
+  }
+}
+
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
   }
 }
