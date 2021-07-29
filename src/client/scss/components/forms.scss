@@ -131,7 +131,9 @@ input[type="submit"],
     }
   }
   button {
-    padding: 3px 5px;
+    position: relative;
+    left: 0;
+    padding: 2px 5px;
     width: 70px;
     font-size: 15px;
     text-align: center;
