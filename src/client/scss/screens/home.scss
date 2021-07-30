@@ -11,9 +11,9 @@
 .video__home-panel {
   display: flex;
   flex-direction: column;
-  position: sticky;
+  position: fixed;
   top: 102px;
-  left: 10px;
+  left: 0;
   background-color: #ced6e065;
   height: 100vh;
   width: 205px;
