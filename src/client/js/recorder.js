@@ -104,8 +104,8 @@ const init = async() => {
     stream = await navigator.mediaDevices.getUserMedia({
         audio:false,
         video: {
-            width: 1024,
-            height: 576,
+            width: 800,
+            height: 600,
         },
     });
     // srcObject는 video가 가질 수 있는 무언가를 의미
