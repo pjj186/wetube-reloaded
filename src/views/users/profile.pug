@@ -6,8 +6,9 @@ block content
     i.fas.fa-bars
     div.profile__container
         div.profile__data
-            img(src=user.avatarUrl).avatar
-            h3=user.name
+            div.profile_info
+                img(src=user.avatarUrl).avatar
+                h3=user.name
         div.video-grid
             each video in user.videos
                 +video(video)

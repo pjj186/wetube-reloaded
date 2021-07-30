@@ -14,10 +14,14 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
-  .avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+  .profile__info {
+    position: absolute;
+    left: 400px;
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
   }
   img {
     margin-bottom: 10px;
