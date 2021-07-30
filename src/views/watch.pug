@@ -2,6 +2,7 @@ extends base.pug
 
 block content
     img(src="/images/icecola.png").icecola
+div.bigvideocontainer
     div#videoContainer(data-id = video._id)
         video(src=video.fileUrl)
         div#videoControls.videoControls
@@ -42,28 +43,28 @@ block content
         if String(video.owner._id) === String(loggedInUser._id)
             a(href=`${video.id}/edit`).editvideo Edit Video &rarr;
             a(href=`${video.id}/delete`).deletevideo Delete Video &rarr;
-    div.video__comments
-        span.comments &nbsp Comments
-            hr
-        if loggedIn
-            div.video__add-comments
-                form.video__comment-form#commentForm
-                    input(type="text", placeholder="Write a nice comment...")
-                    button Add Comment
-        else
-            div.video__add-comments
-                form.video__comment-form#commentForm
-                    input(type="text", placeholder="You need to log in to write comments." disabled)
-        ul
-            each comment in video.comments.reverse()
-                li.video__comment(data-id = comment._id)
-                    a(href=`/users/${comment.owner._id}`)
-                        img(src=comment.owner.avatarUrl).commentAvatar
-                    span.comment-owner #{comment.owner.name}
-                    span &nbsp : &nbsp
-                    span  #{comment.text}
-                    if String(comment.owner._id) === String(loggedInUser._id)
-                        span.video__comment-del DELETE
+div.video__comments
+    span.comments &nbsp Comments
+        hr
+    if loggedIn
+        div.video__add-comments
+            form.video__comment-form#commentForm
+                input(type="text", placeholder="Write a nice comment...")
+                button Add Comment
+    else
+        div.video__add-comments
+            form.video__comment-form#commentForm
+                input(type="text", placeholder="You need to log in to write comments." disabled)
+    ul
+        each comment in video.comments.reverse()
+            li.video__comment(data-id = comment._id)
+                a(href=`/users/${comment.owner._id}`)
+                    img(src=comment.owner.avatarUrl).commentAvatar
+                span.comment-owner #{comment.owner.name}
+                span &nbsp : &nbsp
+                span  #{comment.text}
+                if String(comment.owner._id) === String(loggedInUser._id)
+                    span.video__comment-del DELETE
 
 
 block scripts
