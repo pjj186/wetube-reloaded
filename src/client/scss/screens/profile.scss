@@ -48,4 +48,7 @@
   position: absolute;
   top: 300px;
   left: 400px;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
