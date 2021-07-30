@@ -4,14 +4,15 @@ include ../mixins/video.pug
 block content
     img(src="/images/icecola.png").icecola
     i.fas.fa-bars
-    div.profile__data
-        img(src=user.avatarUrl).avatar
-        h3=user.name
-    div.video-grid
-        each video in user.videos
-            +video(video)
-        else
-            span.empty__message No videos found.
+    div.profile__container
+        div.profile__data
+            img(src=user.avatarUrl).avatar
+            h3=user.name
+        div.video-grid
+            each video in user.videos
+                +video(video)
+            else
+                span.empty__message No videos found.
     div.video__home-panel
         hr
         div.iconbox
