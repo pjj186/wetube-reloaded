@@ -15,6 +15,7 @@
   align-items: center;
   margin-bottom: 50px;
   .profile__info {
+    display: flex;
     position: absolute;
     left: 400px;
     .avatar {
