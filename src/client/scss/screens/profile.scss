@@ -14,6 +14,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  border-bottom: 1px solid black;
   .profile_info {
     margin-top: 30px;
     display: flex;
@@ -24,6 +25,7 @@
       width: 80px;
       height: 80px;
       border-radius: 50%;
+      margin-right: 15px;
     }
   }
   img {
