@@ -1,10 +1,10 @@
 .edit-profile-container {
   position: absolute;
+  left: 300px;
   width: 100%;
   .edit-profile__form {
     form {
       max-width: 380px;
-      margin: 0 auto;
       padding: 30px;
       border-radius: 10px;
       input {
