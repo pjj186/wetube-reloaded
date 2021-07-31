@@ -8,7 +8,7 @@
   left: 300px;
   display: grid;
   gap: 50px;
-  grid-template-columns: repeat(4, minmax(0, 10fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .auth-switch {
