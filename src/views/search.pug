@@ -5,7 +5,7 @@ block content
     i.fas.fa-bars
     img(src="/images/icecola.png").icecola
     
-    div.video-grid
+    div.video-grid-search
         each video in videos
             +video(video)
         else
@@ -56,3 +56,6 @@ block content
         div.iconbox
             i.fas.fa-cog.homeicon
             span SETTINGS
+
+block scripts
+    script(src="/static/js/home.js")
