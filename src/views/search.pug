@@ -5,8 +5,6 @@ block content
     i.fas.fa-bars
     img(src="/images/icecola.png").icecola
     div.video-grid-search
-        span Search results : #{videos.title}
-        hr
         each video in videos
             +video(video)
         else
