@@ -14,3 +14,12 @@
     width: 90%;
   }
 }
+
+.video-grid-search {
+  position: absolute;
+  top: 170px;
+  left: 300px;
+  display: grid;
+  gap: 50px;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
