@@ -80,10 +80,11 @@
   left: 220px;
 }
 
-.fa-bars {
+.bars {
   top: 60px;
   left: 5px;
   position: fixed;
+  display: flex;
   border-radius: 50%;
   cursor: pointer;
   width: 23px;
@@ -93,11 +94,12 @@
   margin-left: 5px;
   display: flex;
   align-items: center;
-  text-align: center;
   font-size: 20px;
   z-index: 2;
+  .fa-bars {
+  }
 }
 
-.fa-bars:active {
+.bars:active {
   background-color: #747d8c52;
 }

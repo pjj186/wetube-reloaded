@@ -2,7 +2,8 @@ extends base.pug
 include mixins/video.pug
 
 block content
-    i.fas.fa-bars
+    div.bars
+        i.fas.fa-bars
     div.video-grid
         each video in videos
             +video(video)
