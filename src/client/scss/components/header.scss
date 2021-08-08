@@ -28,7 +28,9 @@ header {
       border-radius: 15px;
       padding: 10px;
       margin-left: 30px;
-      font-size: 25px;
+      i {
+        font-size: 25px;
+      }
     }
     .header__menu:hover {
       animation: vibrate-1 0.4s linear infinite;
@@ -39,9 +41,6 @@ header {
       margin-left: 20px;
       border-radius: 50%;
       border: 2px solid black;
-    }
-    i {
-      font-size: 16px;
     }
   }
   .header__btn {
