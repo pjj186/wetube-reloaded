@@ -35,7 +35,7 @@ const handleMuteClick = (event) => {
   } else {
     video.muted = true;
   }
-  muteBtnIcon.classList = video.muted
+  muteBtnIcon.className = video.muted
     ? "fas fa-volume-mute"
     : "fas fa-volume-up";
   volumeRange.value = video.muted ? 0 : volumeValue;
@@ -47,11 +47,11 @@ const handleVolumeChange = (event) => {
   } = event;
   if (video.muted) {
     video.muted = false;
-    muteBtnIcon.classList = "fas fa-volume-mute";
+    muteBtnIcon.className = "fas fa-volume-mute";
   }
   if (value === "0") {
     video.muted = true;
-    muteBtnIcon.classList = "fas fa-volume-mute";
+    muteBtnIcon.className = "fas fa-volume-mute";
   }
   volumeValue = value; // Updating global variable
   video.volume = value;
