@@ -17,97 +17,103 @@ let controlsMovementTimeout = null;
 let volumeValue = 0.5; // global variable
 video.volume = volumeValue;
 
-const playControls = () => playBtnIcon.classList = video.paused ? "fas fa-play" : "fas fa-pause";
+const playControls = () =>
+  (playBtnIcon.classList = video.paused ? "fas fa-play" : "fas fa-pause");
 
 const handlePlayClick = (e) => {
-    if (video.paused) {
-        video.play();
-    } else {
-        video.pause();
-    }
-    playControls();
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+  playControls();
 };
 
 const handleMuteClick = (e) => {
-    if(video.muted){
-        video.muted = false;
-    } else {
-        video.muted = true;
-    }
-    muteBtnIcon.classList = video.muted
+  if (video.muted) {
+    video.muted = false;
+  } else {
+    video.muted = true;
+  }
+  muteBtnIcon.classList = video.muted
     ? "fas fa-volume-mute"
     : "fas fa-volume-up";
-    volumeRange.value = video.muted ? 0 : volumeValue;
+  volumeRange.value = video.muted ? 0 : volumeValue;
 };
 
 const handleVolumeChange = (event) => {
-    const { 
-        target : { value },
-     } = event;
-     if(video.muted) {
-         video.muted = false;
-         muteBtn.innerText = "Mute";
-     }
-     volumeValue = value; // Updating global variable
-     video.volume = value;
+  const {
+    target: { value },
+  } = event;
+  if (video.muted) {
+    video.muted = false;
+    muteBtnIcon.classList = "fas fa-volume-mute";
+  }
+  if (value === "0") {
+    video.muted = true;
+    muteIcon.className = "fas fa-volume-mute";
+  }
+  volumeValue = value; // Updating global variable
+  video.volume = value;
 };
 
-const formatTime = (seconds) => new Date(seconds * 1000).toISOString().substr(15, 4);
+const formatTime = (seconds) =>
+  new Date(seconds * 1000).toISOString().substr(15, 4);
 
 const handleLoadedMetadata = () => {
-    totalTime.innerText = formatTime(Math.floor(video.duration));
-    timeline.max = Math.floor(video.duration);
+  totalTime.innerText = formatTime(Math.floor(video.duration));
+  timeline.max = Math.floor(video.duration);
 };
 
 const handleTimeUpdate = () => {
-    currentTime.innerText = formatTime(Math.floor(video.currentTime));
-    timeline.value = Math.floor(video.currentTime);
+  currentTime.innerText = formatTime(Math.floor(video.currentTime));
+  timeline.value = Math.floor(video.currentTime);
 };
 
 const handleTimelineChange = (event) => {
-    const {
-         target : { value }, 
-        } = event;
-        video.currentTime = value;
+  const {
+    target: { value },
+  } = event;
+  video.currentTime = value;
 };
 
 const handleFullScreen = () => {
-    const fullscreen = document.fullscreenElement;
-    if(fullscreen) {
-        document.exitFullscreen();
-        fullScreenIcon.classList = "fas fa-expand";
-    } else {
-        videoContainer.requestFullscreen();
-        fullScreenIcon.classList = "fas fa-compress";  
-    }
+  const fullscreen = document.fullscreenElement;
+  if (fullscreen) {
+    document.exitFullscreen();
+    fullScreenIcon.classList = "fas fa-expand";
+  } else {
+    videoContainer.requestFullscreen();
+    fullScreenIcon.classList = "fas fa-compress";
+  }
 };
 
 const hideControls = () => videoControls.classList.remove("showing");
 
 const handleMouseMove = () => {
-    if(controlsTimeOut) {
-        clearTimeout(controlsTimeOut);
-        controlsTimeOut = null;
-    }
-    if(controlsMovementTimeout){
-        clearTimeout(controlsMovementTimeout);
-        controlsMovementTimeout = null;
-    }
-    videoControls.classList.add("showing");
-    controlsMovementTimeout = setTimeout(hideControls, 3000);
+  if (controlsTimeOut) {
+    clearTimeout(controlsTimeOut);
+    controlsTimeOut = null;
+  }
+  if (controlsMovementTimeout) {
+    clearTimeout(controlsMovementTimeout);
+    controlsMovementTimeout = null;
+  }
+  videoControls.classList.add("showing");
+  controlsMovementTimeout = setTimeout(hideControls, 3000);
 };
 
 const handleMouseLeave = () => {
-    controlsTimeOut = setTimeout(hideControls, 3000); // setTimeout : 딜레이를 넣어준다.
-}
+  controlsTimeOut = setTimeout(hideControls, 3000); // setTimeout : 딜레이를 넣어준다.
+};
 
 const handleVideoClick = (event) => {
-    if(video.paused){
-        video.play();
-    } else {
-        video.pause();
-    }
-    playControls();
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+  playControls();
 };
 
 // const handleVideoKeydown = (event) => {
@@ -122,16 +128,15 @@ const handleVideoClick = (event) => {
 // };
 
 const handleEnded = () => {
-    const {id} = videoContainer.dataset;
-    fetch(`/api/videos/${id}/view`, {
-        method: "POST",
-    });
+  const { id } = videoContainer.dataset;
+  fetch(`/api/videos/${id}/view`, {
+    method: "POST",
+  });
 };
 
 if (video.readyState == 4) {
-    handleLoadedMetadata();
-    }
-
+  handleLoadedMetadata();
+}
 
 playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMuteClick);
@@ -144,4 +149,4 @@ video.addEventListener("click", handleVideoClick);
 timeline.addEventListener("input", handleTimelineChange);
 fullScreenBtn.addEventListener("click", handleFullScreen);
 videoContainer.addEventListener("mousemove", handleMouseMove);
-videoContainer.addEventListener("mouseleave",handleMouseLeave);
+videoContainer.addEventListener("mouseleave", handleMouseLeave);
