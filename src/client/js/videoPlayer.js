@@ -29,7 +29,7 @@ const handlePlayClick = (e) => {
   playControls();
 };
 
-const handleMuteClick = (e) => {
+const handleMuteClick = (event) => {
   if (video.muted) {
     video.muted = false;
   } else {
@@ -51,7 +51,7 @@ const handleVolumeChange = (event) => {
   }
   if (value === "0") {
     video.muted = true;
-    muteIcon.className = "fas fa-volume-mute";
+    muteBtnIcon.classList = "fas fa-volume-mute";
   }
   volumeValue = value; // Updating global variable
   video.volume = value;
