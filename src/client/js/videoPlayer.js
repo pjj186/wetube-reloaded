@@ -100,11 +100,11 @@ const handleMouseMove = () => {
     controlsMovementTimeout = null;
   }
   videoControls.classList.add("showing");
-  controlsMovementTimeout = setTimeout(hideControls, 3000);
+  controlsMovementTimeout = setTimeout(hideControls, 1500);
 };
 
 const handleMouseLeave = () => {
-  controlsTimeOut = setTimeout(hideControls, 3000); // setTimeout : 딜레이를 넣어준다.
+  controlsTimeOut = setTimeout(hideControls, 1500); // setTimeout : 딜레이를 넣어준다.
 };
 
 const handleVideoClick = (event) => {
