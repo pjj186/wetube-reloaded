@@ -1,9 +1,9 @@
 #videoContainer {
-  width: 70%;
+  width: 100%;
   position: relative;
   color: white;
   video {
-    width: 70%;
+    width: 100%;
   }
   .videoControls {
     opacity: 0;
@@ -13,12 +13,12 @@
     }
     align-items: center;
     border-radius: 10px;
-    // position: absolute;
-    // bottom: 10px;
-    width: 80%;
-    // left: 0;
-    // right: 0;
-    // margin: 0 auto;
+    position: absolute;
+    bottom: 10px;
+    width: 95%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr auto;
     gap: 10px;
